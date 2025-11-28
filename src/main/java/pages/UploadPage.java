@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -30,11 +31,12 @@ public class UploadPage {
     public void setMessage(String message) {
         driver.findElement(messageField).sendKeys(message);
     }
-    public void uploadFile(String uploads) {
-        driver.findElement(uploadFileField).sendKeys(uploads);
-    }
-    public void clickUploadButton() {
+//    public void uploadFile(String uploads) {
+//        driver.findElement(uploadFileField).sendKeys(uploads);
+//    }
+    public AlertPage clickUploadButton() {
         driver.findElement(uploadButton).click();
+        return new AlertPage(driver);
     }
 
 }

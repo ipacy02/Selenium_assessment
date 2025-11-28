@@ -4,7 +4,10 @@ import base.BaseTests;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
+import pages.AlertPage;
 import pages.UploadPage;
+
+import static org.testng.Assert.assertEquals;
 
 public class UploadTests extends BaseTests {
 
@@ -14,13 +17,14 @@ public class UploadTests extends BaseTests {
     @Test
     public void UploadTests() {
 
-        driver.get("");
-
         UploadPage uploadPage = new UploadPage(driver);
-        uploadPage.setUsernameField();
-        uploadPage.setEmailField();
+        uploadPage.setUsernameField("ipacy");
+        uploadPage.setEmailField("ipacy02@gmail.com");
+        uploadPage.setSubjectField("this is the field");
+        uploadPage.setMessage("We are going tp use it");
 
 
+        assertEquals(uploadPage.clickUploadButton(), "Press OK to proceed!");
 
     }
 }
