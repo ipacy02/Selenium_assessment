@@ -21,7 +21,7 @@ public class UploadTests extends BaseTests {
         uploadPage.setUsernameField("ipacy");
         uploadPage.setEmailField("ipacy02@gmail.com");
         uploadPage.setSubjectField("this is the field");
-        uploadPage.setMessage("We are going tp use it");
+        uploadPage.setMessage("We are going to use it");
 
 
         assertEquals(uploadPage.clickUploadButton(), "Press OK to proceed!");

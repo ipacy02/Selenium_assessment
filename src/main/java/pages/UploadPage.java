@@ -15,25 +15,27 @@ public class UploadPage {
     private By uploadButton = By.name("submit");
 
 
-
     public UploadPage(WebDriver driver) {
         this.driver = driver;
     }
+
     public void setUsernameField(String name) {
         driver.findElement(usernameField).sendKeys(name);
     }
+
     public void setEmailField(String email) {
         driver.findElement(emailField).sendKeys(email);
     }
+
     public void setSubjectField(String subject) {
         driver.findElement(subjectField).sendKeys(subject);
     }
+
     public void setMessage(String message) {
         driver.findElement(messageField).sendKeys(message);
     }
-//    public void uploadFile(String uploads) {
-//        driver.findElement(uploadFileField).sendKeys(uploads);
-//    }
+
+
     public AlertPage clickUploadButton() {
         driver.findElement(uploadButton).click();
         return new AlertPage(driver);
