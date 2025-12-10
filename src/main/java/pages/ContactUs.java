@@ -1,33 +1,31 @@
 package pages;
 
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class UploadPage {
+public class ContactUs {
 
     private WebDriver driver;
-    private By usernameField = By.name("name");
+    private By nameField = By.name("name");
     private By emailField = By.name("email");
     private By subjectField = By.name("subject");
     private By messageField = By.id("message");
-    private By uploadFileField = By.name("upload_file");
-    private By uploadButton = By.name("submit");
+    private By uploadField = By.name("upload_file");
+    private By submitField = By.name("submit");
 
-
-    public UploadPage(WebDriver driver) {
+    public ContactUs(WebDriver driver) {
         this.driver = driver;
     }
 
-    public void setUsernameField(String name) {
-        driver.findElement(usernameField).sendKeys(name);
+    public void setNameField(String name) {
+        driver.findElement(nameField).sendKeys(name);
     }
 
     public void setEmailField(String email) {
         driver.findElement(emailField).sendKeys(email);
     }
 
-    public void setSubjectField(String subject) {
+    public void setSubject(String subject) {
         driver.findElement(subjectField).sendKeys(subject);
     }
 
@@ -35,10 +33,13 @@ public class UploadPage {
         driver.findElement(messageField).sendKeys(message);
     }
 
-
-    public AlertPage clickUploadButton() {
-        driver.findElement(uploadButton).click();
-        return new AlertPage(driver);
+    public void clickUploadFile(String upload) {
+        driver.findElement(uploadField).sendKeys(upload);
     }
 
+    public PopUpMessage clickSubmit() {
+        driver.findElement(submitField).click();
+        return new PopUpMessage(driver);
+
+    }
 }
